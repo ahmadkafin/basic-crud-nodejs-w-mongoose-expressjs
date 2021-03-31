@@ -1,0 +1,30 @@
+<h3><a href="/employee" class="btn btn-secondary btn-sm">Create New</a></h3>
+<div class="table">
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+                <tr>
+                    <td>{{this.fullName}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.mobile}}</td>
+                    <td>{{this.city}}</td>
+                    <td>{{this.status}}</td>
+                    <td>
+                        <a href="/employee/{{this._id}}" class="btn btn-info btn-sm">Edit</a>
+                        <a href="/employee/delete/{{this._id}}" onclick="return confirm('Apakah kamu yakin?');" class="btn btn-danger btn-sm">Delete</a>                        
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
